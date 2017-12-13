@@ -1,6 +1,10 @@
 <?xml version='1.0' encoding='utf-8'?>
-<plugin id="com.amitshekhar" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+<plugin id="com.amitshekhar"  xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android"  id="cordova-plugin-app-version"
+    version="1.0.0">
     <name>sunDebug</name>
+    <description>
+    </description>
+    <license>MIT</license>
      <engines>
         <!--
             Cordova 2.8.0 is all I have tested on - it should work fine with earlier versions.
@@ -11,13 +15,13 @@
     <js-module name="sunDebug" src="www/sunDebug.js">
         <clobbers target="sunDebug" />
     </js-module>
-	<platform name="android">
-    <config-file target="res/xml/config.xml" parent="/*">
-      <feature name="sunDebug">
-        <param name="android-package" value="com.amitshekhar.DebugPlugin"/>
-      </feature>
-    </config-file>
-    <source-file src="src/android/assets/app.js" target-dir="assets/debug"/>
+<platform name="android">
+   	 <config-file target="res/xml/config.xml" parent="/*">
+     		 <feature name="sunDebug">
+      	 	 <param name="android-package" value="com.amitshekhar.DebugPlugin"/>
+     		 </feature>
+  	  </config-file>
+    	<source-file src="src/android/assets/app.js" target-dir="assets/debug"/>
 	<source-file src="src/android/assets/bootstrap.min.css" target-dir="assets/debug"/>
 	<source-file src="src/android/assets/bootstrap.min.js" target-dir="assets/debug"/>
 	<source-file src="src/android/assets/buttons.dataTables.min.css" target-dir="assets/debug"/>
