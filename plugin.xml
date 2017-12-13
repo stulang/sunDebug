@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="com.amitshekhar" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>sunDebug</name>
+    <js-module name="sunDebug" src="www/sunDebug.js">
+        <clobbers target="sunDebug" />
+    </js-module>
+	<platform name="android">
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="sunDebug">
+        <param name="android-package" value="com.amitshekhar.DebugPlugin"/>
+      </feature>
+    </config-file>
+    <source-file src="src/android/assets/app.js" target-dir="assets/debug"/>
+	<source-file src="src/android/assets/bootstrap.min.css" target-dir="assets/debug"/>
+	<source-file src="src/android/assets/bootstrap.min.js" target-dir="assets/debug"/>
+	<source-file src="src/android/assets/buttons.dataTables.min.css" target-dir="assets/debug"/>
+	<source-file src="src/android/assets/custom.css" target-dir="assets/debug"/>
+	<source-file src="src/android/assets/dataTables.altEditor.free.js"target-dir="assets/debug"/>
+	<source-file src="src/android/assets/dataTables.buttons.min.js" target-dir="assets/debug"/>
+	<source-file src="src/android/assets/dataTables.responsive.min.js" target-dir="assets/debug"/>
+	<source-file src="src/android/assets/dataTables.select.min.js" target-dir="assets/debug"/>
+	<source-file src="src/android/assets/favicon.ico" target-dir="assets/debug"/>
+	<source-file src="src/android/assets/index.html" target-dir="assets/debug"/>
+	<source-file src="src/android/assets/jquery.dataTables.min.css" target-dir="assets/debug"/>
+	<source-file src="src/android/assets/jquery.dataTables.min.js" target-dir="assets/debug"/>
+	<source-file src="src/android/assets/jquery.min.js" target-dir="assets/debug"/>
+	<source-file src="src/android/assets/responsive.dataTables.min.css" target-dir="assets/debug"/>
+	<source-file src="src/android/assets/select.dataTables.min.css" target-dir="assets/debug"/>
+	<source-file src="src/android/java/com/amitshekhar/DebugDB.java" target-dir="src/com/amitshekhar"/>
+	<source-file src="src/android/java/com/amitshekhar/DebugDBInitProvider.java" target-dir="src/com/amitshekhar"/>
+	<source-file src="src/android/java/com/amitshekhar/DebugPlugin.java" target-dir="src/com/amitshekhar"/>
+	<source-file src="src/android/java/com/amitshekhar/model/Response.java" target-dir="src/com/amitshekhar/model"/>
+	<source-file src="src/android/java/com/amitshekhar/model/RowDataRequest.java" target-dir="src/com/amitshekhar/model"/>
+	<source-file src="src/android/java/com/amitshekhar/model/TableDataResponse.java" target-dir="src/com/amitshekhar/model"/>
+	<source-file src="src/android/java/com/amitshekhar/model/UpdateRowResponse.java" target-dir="src/com/amitshekhar/model"/>
+	<source-file src="src/android/java/com/amitshekhar/server/ClientServer.java" target-dir="src/com/amitshekhar/server"/>
+	<source-file src="src/android/java/com/amitshekhar/server/RequestHandler.java" target-dir="src/com/amitshekhar/server"/>
+	<source-file src="src/android/java/com/amitshekhar/utils/Constants.java" target-dir="src/com/amitshekhar/utils"/>
+	<source-file src="src/android/java/com/amitshekhar/utils/ConverterUtils.java" target-dir="src/com/amitshekhar/utils"/>
+	<source-file src="src/android/java/com/amitshekhar/utils/DatabaseFileProvider.java" target-dir="src/com/amitshekhar/utils"/>
+	<source-file src="src/android/java/com/amitshekhar/utils/DatabaseHelper.java" target-dir="src/com/amitshekhar/utils"/>
+	<source-file src="src/android/java/com/amitshekhar/utils/DataType.java" target-dir="src/com/amitshekhar/utils"/>
+	<source-file src="src/android/java/com/amitshekhar/utils/NetworkUtils.java" target-dir="src/com/amitshekhar/utils"/>
+	<source-file src="src/android/java/com/amitshekhar/utils/PrefHelper.java" target-dir="src/com/amitshekhar/utils"/>
+	<source-file src="src/android/java/com/amitshekhar/utils/TableNameParser.java" target-dir="src/com/amitshekhar/utils"/>
+	<source-file src="src/android/java/com/amitshekhar/utils/Utils.java" target-dir="src/com/amitshekhar/utils"/>
+  </platform>
+</plugin>
+
+

@@ -1,0 +1,9 @@
+{
+  "name": "sun-database-debug",
+  "version": "1.0.0",
+  "description": "debug database on android",
+  "main": "index.js",
+  "scripts": {},
+  "author": "",
+  "license": "ISC"
+}
