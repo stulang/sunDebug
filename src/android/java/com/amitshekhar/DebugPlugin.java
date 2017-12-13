@@ -1,23 +1,18 @@
 package com.amitshekhar;
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.widget.Toast;
-
 import org.apache.cordova.CordovaPlugin;
-
 import java.io.File;
 import java.lang.reflect.Method;
 import java.util.HashMap;
 import org.apache.cordova.CallbackContext;
-import org.apache.cordova.ConfigXmlParser;
 import org.apache.cordova.CordovaArgs;
 import org.apache.cordova.CordovaInterface;
-import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CordovaWebView;
-import org.apache.cordova.PluginResult;
 import android.util.Log;
 import org.json.JSONException;
-import org.json.JSONObject;
-
 /**
  * Created by sun.wq on 2017/12/12.
  */
@@ -60,17 +55,25 @@ public class DebugPlugin extends CordovaPlugin {
         return cmdProcessed;
     }
 
-    public static void showDebugDBAddressLogToast(Context context) {
+    public  void showDebugDBAddressLogToast(Context context) {
             try {
                 Class<?> debugDB = Class.forName("com.amitshekhar.DebugDB");
                 Method getAddressLog = debugDB.getMethod("getAddressLog");
                 Object value = getAddressLog.invoke(null);
                 Toast.makeText(context, (String) value, Toast.LENGTH_LONG).show();
+                open("http://127.0.0.1:"+DebugDB.portNumber);
             } catch (Exception ignore) {
 
             }
     }
-
+    void open( String url){
+          Intent intent = new Intent();
+          //Intent intent = new Intent(Intent.ACTION_VIEW,uri);
+          intent.setAction("android.intent.action.VIEW");
+          Uri content_url = Uri.parse(url);
+          intent.setData(content_url);
+          this.cordova.getActivity().startActivity(intent);
+    }
     public static void setCustomDatabaseFiles(Context context) {
             try {
                 Class<?> debugDB = Class.forName("com.amitshekhar.DebugDB");
