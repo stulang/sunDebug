@@ -55,6 +55,8 @@
 	<source-file src="src/android/java/com/amitshekhar/utils/PrefHelper.java" target-dir="src/com/amitshekhar/utils"/>
 	<source-file src="src/android/java/com/amitshekhar/utils/TableNameParser.java" target-dir="src/com/amitshekhar/utils"/>
 	<source-file src="src/android/java/com/amitshekhar/utils/Utils.java" target-dir="src/com/amitshekhar/utils"/>
+	    <framework src="src/android/build.gradle" custom="true" type="gradleReference" />
+
   </platform>
 </plugin>
 
