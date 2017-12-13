@@ -4,6 +4,17 @@
   "description": "debug database on android",
   "main": "index.js",
   "scripts": {},
-  "author": "",
-  "license": "ISC"
+  "author": "sunwq",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stulang/sunDebug.git"
+  },
+  "keywords": [
+    "sun92399"
+  ],
+  "bugs": {
+    "url": "https://github.com/stulang/sunDebug/issues"
+  },
+  "homepage": "https://github.com/stulang/sunDebug#readme"
 }
