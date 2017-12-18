@@ -61,7 +61,7 @@ public class DebugPlugin extends CordovaPlugin {
                 Method getAddressLog = debugDB.getMethod("getAddressLog");
                 Object value = getAddressLog.invoke(null);
                 Toast.makeText(context, (String) value, Toast.LENGTH_LONG).show();
-                open("http://127.0.0.1:"+DebugDB.portNumber);
+                open("http://127.0.0.1:"+DebugDB.DEFAULT_PORT);
             } catch (Exception ignore) {
 
             }
