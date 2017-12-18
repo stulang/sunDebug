@@ -36,7 +36,7 @@ import java.util.Map;
 public class DebugDB {
 
     private static final String TAG = DebugDB.class.getSimpleName();
-    private static final int DEFAULT_PORT = 8080;
+    public static final int DEFAULT_PORT = 8080;
     private static ClientServer clientServer;
     private static String addressLog = "not available";
 
