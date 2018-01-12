@@ -2,6 +2,7 @@ package com.amitshekhar;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.webkit.WebView;
 import android.widget.Toast;
 import org.apache.cordova.CordovaPlugin;
 import java.io.File;
@@ -44,11 +45,17 @@ public class DebugPlugin extends CordovaPlugin {
 
 
     @Override
-    public boolean execute(String action, CordovaArgs args, CallbackContext callbackContext) throws JSONException {
+    public boolean execute(String action, CordovaArgs args,final  CallbackContext callbackContext) throws JSONException {
         boolean cmdProcessed = true;
         if ("open".equals(action)) {
             showDebugDBAddressLogToast(this.cordova.getActivity());
-        } else {
+        } else  if ("WebDebugEnable".equals(action)) {
+          cordova.getActivity().runOnUiThread(new Runnable() {
+            public void run() {
+              WebContentsDebuggingEnabled( callbackContext);
+            }
+          });
+        }else{
             cmdProcessed = false;
         }
 
@@ -89,4 +96,19 @@ public class DebugPlugin extends CordovaPlugin {
 
             }
     }
+
+  public  void WebContentsDebuggingEnabled( CallbackContext callbackContext) {
+    if ( android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.KITKAT) {
+      try {
+        ((WebView) webView.getEngine().getView()).setWebContentsDebuggingEnabled(true);
+        callbackContext.success();
+    } catch (IllegalArgumentException e) {
+      e.printStackTrace();
+      callbackContext.error( e.getMessage());
+
+    }
+  }else{
+    callbackContext.error("error : sdk version < 19");
+    }
+  }
 }
